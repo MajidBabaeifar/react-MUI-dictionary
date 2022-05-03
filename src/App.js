@@ -4,8 +4,16 @@ import Header from "./components/Header";
 import { Container } from "@mui/material";
 
 const App = () => {
+  const [language, setLanguage ] = useState("en")
+  const [word, setWord] = useState();
   const [definition, setDefinition] = useState();
 
+  const handleChange =(value) =>{
+    setWord(value)
+  }
+  const handleSelect =(value) => {
+    setLanguage(value)
+  }
   const getDictonaryAPI = async () => {
     const data = await axios.get(
       "https://api.dictionaryapi.dev/api/v2/entries/en/bye"
@@ -18,7 +26,7 @@ const App = () => {
   console.log(definition);
   return (
     <Container>
-      <Header />
+      <Header word={word} handleChange={handleChange} language={language} handleSelect={handleSelect}/>
     </Container>
   );
 };
