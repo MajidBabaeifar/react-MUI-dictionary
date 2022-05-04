@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "./components/Header";
 import { Container } from "@mui/material";
+import Meanings from "./components/Meanings";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -15,11 +16,11 @@ const App = () => {
   const handleSelect = (value) => {
     setLanguage(value);
   };
-  const getDictonaryAPI = async (w) => {
+  const getDictonaryAPI = async () => {
     try {
       setIsLoading(true);
       const data = await axios.get(
-        `https://api.dictionaryapi.dev/api/v2/entries/en/${w}`
+        `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
       );
       setDefinition(data.data[0]);
       setIsLoading(false);
@@ -30,8 +31,8 @@ const App = () => {
   };
   console.log(word);
   useEffect(() => {
-    getDictonaryAPI(word);
-  }, []);
+    getDictonaryAPI();
+  }, [word]);
   console.log(definition);
   return (
     <Container>
@@ -40,8 +41,9 @@ const App = () => {
         handleChange={handleChange}
         language={language}
         handleSelect={handleSelect}
-        isLoading={isLoading}
+
       />
+      <Meanings isLoading={isLoading} definition={definition}/>
     </Container>
   );
 };

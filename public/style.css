@@ -23,8 +23,8 @@
 .box--items {
     width: 22vw;
 }
-.loading{
-    width: 11vw;
+.part-of-speech{
+    font-weight: bold;
 }
 
 @media (max-width:700px) {

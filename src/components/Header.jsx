@@ -1,6 +1,5 @@
 import { MenuItem, TextField } from "@mui/material";
 import React from "react";
-import { Rings } from "react-loading-icons";
 
 const Header = (props) => {
   return (
@@ -28,7 +27,7 @@ const Header = (props) => {
           <MenuItem value="fr">france</MenuItem>
         </TextField>
       </div>
-      {props.isLoading && <Rings className="loading" strokeOpacity={.8} stroke="#353533" speed={1.5} />}
+     
     </div>
   );
 };
