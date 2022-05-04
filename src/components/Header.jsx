@@ -1,9 +1,10 @@
 import { MenuItem, TextField } from "@mui/material";
-import React, { Fragment } from "react";
+import React from "react";
+import { Rings } from "react-loading-icons";
 
 const Header = (props) => {
   return (
-    <Fragment className="header">
+    <div className="header">
       <div className="title">{props.word ? props.word : "Worder !"}</div>
       <div className="boxes">
         <TextField
@@ -27,7 +28,8 @@ const Header = (props) => {
           <MenuItem value="fr">france</MenuItem>
         </TextField>
       </div>
-    </Fragment>
+      {props.isLoading && <Rings className="loading" strokeOpacity={.8} stroke="#353533" speed={1.5} />}
+    </div>
   );
 };
 
