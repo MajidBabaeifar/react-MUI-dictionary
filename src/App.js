@@ -8,7 +8,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [language, setLanguage] = useState("en");
   const [word, setWord] = useState();
-  const [definition, setDefinition] = useState();
+  const [definitio, setDefinitio] = useState();
 
   const handleChange = (value) => {
     setWord(value);
@@ -22,18 +22,17 @@ const App = () => {
       const data = await axios.get(
         `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
       );
-      setDefinition(data.data[0]);
+      setDefinitio(data.data[0]);
       setIsLoading(false);
     } catch (e) {
       setIsLoading(false);
       console.log(e);
     }
   };
-  console.log(word);
   useEffect(() => {
     getDictonaryAPI();
   }, [word]);
-  console.log(definition);
+  console.log(definitio);
   return (
     <Container>
       <Header
@@ -41,9 +40,8 @@ const App = () => {
         handleChange={handleChange}
         language={language}
         handleSelect={handleSelect}
-
       />
-      <Meanings isLoading={isLoading} definition={definition}/>
+      <Meanings isLoading={isLoading} definitio={definitio} word={word}/>
     </Container>
   );
 };

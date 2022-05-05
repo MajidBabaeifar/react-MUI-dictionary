@@ -25,6 +25,7 @@
 }
 .part-of-speech{
     font-weight: bold;
+    margin-right: 10px;
 }
 
 @media (max-width:700px) {
@@ -35,4 +36,7 @@
     .box--items {
         width: 70%;
     }
+}
+li,.b--margin{
+    margin-bottom: 7px;
 }
