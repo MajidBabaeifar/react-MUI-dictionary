@@ -1,5 +1,6 @@
 import { MenuItem, TextField } from "@mui/material";
 import React from "react";
+import languages from "../data/languageList";
 
 const Header = (props) => {
   return (
@@ -23,8 +24,9 @@ const Header = (props) => {
           helperText="Please select your currency"
           variant="standard"
         >
-          <MenuItem value="en">english</MenuItem>
-          <MenuItem value="fr">france</MenuItem>
+          {languages.map((lang)=>(
+            <MenuItem value={lang.label}>{lang.value}</MenuItem>
+          ))}
         </TextField>
       </div>
      

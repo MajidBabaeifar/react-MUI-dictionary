@@ -20,7 +20,7 @@ const App = () => {
     try {
       setIsLoading(true);
       const data = await axios.get(
-        `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+        `https://api.dictionaryapi.dev/api/v2/entries/${language}/${word}`
       );
       setDefinitio(data.data[0]);
       setIsLoading(false);
@@ -31,7 +31,7 @@ const App = () => {
   };
   useEffect(() => {
     getDictonaryAPI();
-  }, [word]);
+  }, [word, language]);
   console.log(definitio);
   return (
     <Container>
