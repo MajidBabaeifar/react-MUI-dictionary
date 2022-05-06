@@ -7,13 +7,13 @@ const Meanings = ({ isLoading, definitio, word }) => {
       {isLoading && <Rings strokeOpacity={0.8} stroke="#353533" speed={1.5} />}
 
       {word && (
-        <div className="meaning--box">
-          <div>
+        <div className="meaning--box" >
+          <div className="phonetic--box">
             <h2>phonetics</h2>
             {definitio.phonetics.map((phonetic) => (
               <div>
                 {phonetic.audio && (
-                  <audio controls>
+                  <audio className="audio" controls>
                     <source src={phonetic.audio} />
                   </audio>
                 )}

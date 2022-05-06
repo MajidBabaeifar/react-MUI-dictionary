@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
+
 .header {
     width: 100%;
     display: flex;
@@ -20,45 +21,67 @@
     text-align: center;
     text-transform: uppercase;
 }
-.boxes{
+
+.boxes {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     width: 100%;
 }
+
 .box--items {
     width: 22vw;
 }
-.part-of-speech{
+
+.part-of-speech {
     font-weight: bold;
     margin-right: 10px;
 }
-.meaning--box{
+
+.meaning--box {
     height: 50vh;
     width: 80%;
     overflow-y: scroll;
+    background-color: #8ecae6;
+    /* border-radius: 5px; */
+    padding: 15px;
+    padding-right: 30px;
 }
+
 .meaning--box::-webkit-scrollbar {
-    width: 12px;
+    width: 17px;
 }
+
 .meaning--box::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-    border-radius: 10px;
+    background: #ffb703;
 }
+
 .meaning--box::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+
+    background-color: #fb8500;
+    border: 4px solid transparent;
+    background-clip: content-box;
+}
+.audio{
+    width: 100%;
+    height: 40px;
+}
+.audio::-webkit-media-controls-panel{
+    background-color: #ffb703;
 }
 
 @media (max-width:700px) {
-    .boxes{
+    .boxes {
         flex-direction: column;
         align-items: center;
     }
+
     .box--items {
         width: 70%;
     }
 }
-li,.b--margin{
+
+li,
+.b--margin {
     margin-bottom: 7px;
 }
