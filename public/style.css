@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400&display=swap');
 
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    height: 95vh;
 }
 
 .header {
@@ -17,6 +18,7 @@
 
 .title {
     font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
     font-size: 12vw;
     text-align: center;
     text-transform: uppercase;
@@ -39,13 +41,17 @@
 }
 
 .meaning--box {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
     height: 50vh;
     width: 80%;
     overflow-y: scroll;
-    background-color: #8ecae6;
+    border: 2px solid #fb8500;
+    /* background-color: #8ecae6; */
     /* border-radius: 5px; */
     padding: 15px;
     padding-right: 30px;
+    text-align: center;
 }
 
 .meaning--box::-webkit-scrollbar {

@@ -4,10 +4,11 @@ import { Rings } from "react-loading-icons";
 const Meanings = ({ isLoading, definitio, word }) => {
   return (
     <>
-      {isLoading && <Rings strokeOpacity={0.8} stroke="#353533" speed={1.5} />}
-
-      {word && (
-        <div className="meaning--box" >
+      {word ? (
+        <div className="meaning--box">
+          {isLoading && (
+            <Rings strokeOpacity={0.8} stroke="#353533" speed={1.5} />
+          )}
           <div className="phonetic--box">
             <h2>phonetics</h2>
             {definitio.phonetics.map((phonetic) => (
@@ -40,16 +41,9 @@ const Meanings = ({ isLoading, definitio, word }) => {
             </ul>
           ))}
         </div>
+      ) : (
+        <div className="meaning--box">START BY SEARCH A WORD ...</div>
       )}
-
-      {/* {definitio.meanings.map((mean) => (
-        <div>
-          <div className="part-of-speech">{mean.partOfSpeech}</div>
-          {mean.definitions.map((def) => (
-            <div>{def.definition}</div>
-          ))}
-        </div>
-      ))} */}
     </>
   );
 };
