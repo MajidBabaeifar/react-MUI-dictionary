@@ -35,13 +35,15 @@ const App = () => {
   console.log(definitio);
   return (
     <Container>
-      <Header
-        word={word}
-        handleChange={handleChange}
-        language={language}
-        handleSelect={handleSelect}
-      />
-      <Meanings isLoading={isLoading} definitio={definitio} word={word}/>
+      <div className="container">
+        <Header
+          word={word}
+          handleChange={handleChange}
+          language={language}
+          handleSelect={handleSelect}
+        />
+        <Meanings isLoading={isLoading} definitio={definitio} word={word} />
+      </div>
     </Container>
   );
 };
