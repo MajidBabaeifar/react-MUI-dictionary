@@ -32,7 +32,7 @@ const App = () => {
   useEffect(() => {
     getDictonaryAPI();
   }, [word, language]);
-  console.log(definitio);
+
   return (
     <Container>
       <div className="container">

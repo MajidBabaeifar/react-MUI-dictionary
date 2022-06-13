@@ -25,7 +25,7 @@ const Header = (props) => {
           variant="standard"
         >
           {languages.map((lang)=>(
-            <MenuItem value={lang.label}>{lang.value}</MenuItem>
+            <MenuItem key={lang.label} value={lang.label}>{lang.value}</MenuItem>
           ))}
         </TextField>
       </div>
